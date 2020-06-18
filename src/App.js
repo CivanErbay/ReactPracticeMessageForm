@@ -1,13 +1,15 @@
 import React, {useState} from 'react';
 import './App.css';
-
 import Grid from "@material-ui/core/Grid";
 import Form from "./components/Form";
 import CenteredTabs from "./components/CenteredTabs";
 import { createMuiTheme } from '@material-ui/core/styles';
-
 import {MuiThemeProvider} from "@material-ui/core";
 import teal from "@material-ui/core/colors/teal";
+import {BrowserRouter} from "react-router-dom";
+
+
+
 
 const theme = createMuiTheme({
     palette: {
@@ -48,6 +50,8 @@ function App() {
 
     return (
         <div className="App">
+
+        <BrowserRouter>       {/* BrowserRouter sollte alle Routes und switches umfassen. Diese befinden sich z.B. in den low-level Komponenten (hier Form und Tabs)*/}
             <MuiThemeProvider theme={theme}>
             <CenteredTabs/>
             <Grid
@@ -55,13 +59,14 @@ function App() {
                 direction="column"
                 alignItems="center"
                 justify="center"
-                style={{ minHeight: "100vh" }}
+                style={{ minHeight: "94vh" }}
             >
-                        <Form handleChange={handleChange} handleSubmit={handleSubmit} email={messageState.email}/>
+                <Form handleChange={handleChange} handleSubmit={handleSubmit} email={messageState.email}/>
 
 
             </Grid>
             </MuiThemeProvider>
+        </BrowserRouter>
         </div>
     );
 }

@@ -3,6 +3,9 @@ import TextField from "@material-ui/core/TextField";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import Home from "./Home";
+import About from "./About";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -36,6 +39,16 @@ export default function Form({handleChange, handleSubmit}) {
                 variant="outlined"
             />
             <Button onClick={handleSubmit}>Submit</Button>
+
+                <Switch>
+                    <Route path="/home">
+                        <Home/>
+                    </Route>
+                    <Route path="/about">
+                        <About/>
+                    </Route>
+                </Switch>
+
             </Grid>
         </form>
 

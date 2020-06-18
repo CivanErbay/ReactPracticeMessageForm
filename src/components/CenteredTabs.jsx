@@ -4,6 +4,17 @@ import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
+import Home from "./Home";
+import About from "./About";
+
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+
+
 const useStyles = makeStyles({
     root: {
         flexGrow: 1,
@@ -20,6 +31,7 @@ export default function CenteredTabs() {
 
     return (
         <Paper className={classes.root}>
+
             <Tabs
                 value={value}
                 onChange={handleChange}
@@ -27,9 +39,12 @@ export default function CenteredTabs() {
                 textColor="primary"
                 centered
             >
-                <Tab label="Item One"/>
-                <Tab label="Item Two"/>
+
+
+                    <Link to="/about"><Tab label="About"/></Link>
+                    <Link to="/home"> <Tab label="Home"/></Link>
                 <Tab label="Item Three"/>
+
             </Tabs>
         </Paper>
     );
