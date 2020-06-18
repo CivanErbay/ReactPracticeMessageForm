@@ -3,9 +3,22 @@ import './App.css';
 
 import Grid from "@material-ui/core/Grid";
 import Form from "./components/Form";
-import {Tab} from "@material-ui/core";
 import CenteredTabs from "./components/CenteredTabs";
+import { createMuiTheme } from '@material-ui/core/styles';
 
+import {MuiThemeProvider} from "@material-ui/core";
+import teal from "@material-ui/core/colors/teal";
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            main: teal[800],
+        },
+        secondary: {
+            main: '#f44336',
+        },
+    },
+});
 
 
 function App() {
@@ -35,6 +48,7 @@ function App() {
 
     return (
         <div className="App">
+            <MuiThemeProvider theme={theme}>
             <CenteredTabs/>
             <Grid
                 container
@@ -47,6 +61,7 @@ function App() {
 
 
             </Grid>
+            </MuiThemeProvider>
         </div>
     );
 }
