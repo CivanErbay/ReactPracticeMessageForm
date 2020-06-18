@@ -2,6 +2,9 @@ import React from 'react'
 import TextField from "@material-ui/core/TextField";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
+
+import {createMuiTheme} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -12,14 +15,16 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function Form({handleChange, handleSubmit, email}) {
+
+export default function Form({handleChange, handleSubmit}) {
     const classes = useStyles();
 
 
 
     return(
-        <form className={classes.root} noValidate autoComplete="off">
-            <p>{email}</p>
+
+        <form className={classes.root} noValidate autoComplete="off" >
+            <Grid container direction="column">
             <TextField onChange={handleChange} name="name" id="outlined-basic" label="Your Name" variant="outlined" placeholder="Your Name" />
             <TextField onChange={handleChange} name="email" id="outlined-basic" label="Your E-Mail" variant="outlined" placeholder="Your E-Mail"/>
             <TextField
@@ -32,6 +37,7 @@ export default function Form({handleChange, handleSubmit, email}) {
                 variant="outlined"
             />
             <Button onClick={handleSubmit}>Submit</Button>
+            </Grid>
         </form>
 
     )

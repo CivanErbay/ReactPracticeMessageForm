@@ -3,6 +3,8 @@ import './App.css';
 
 import Grid from "@material-ui/core/Grid";
 import Form from "./components/Form";
+import {Tab} from "@material-ui/core";
+import CenteredTabs from "./components/CenteredTabs";
 
 
 
@@ -33,15 +35,16 @@ function App() {
 
     return (
         <div className="App">
+            <CenteredTabs/>
             <Grid
                 container
-                spacing={0}
                 direction="column"
                 alignItems="center"
                 justify="center"
                 style={{ minHeight: "100vh" }}
             >
                         <Form handleChange={handleChange} handleSubmit={handleSubmit} email={messageState.email}/>
+
 
             </Grid>
         </div>
