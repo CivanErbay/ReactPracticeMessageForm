@@ -1,16 +1,11 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
-import Home from "./Home";
-import About from "./About";
 
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
     Link
 } from "react-router-dom";
 
@@ -40,10 +35,10 @@ export default function CenteredTabs() {
                 centered
             >
 
-
-                    <Link to="/about"><Tab label="About"/></Link>
-                    <Link to="/home"> <Tab label="Home"/></Link>
-                <Tab label="Item Three"/>
+                <Link to="/home"><Tab label="Home"/></Link>
+                <Link to="/about"><Tab label="About"/></Link>
+                <Link to="/impressum"> <Tab label="Impressum"/></Link>
+                <Link to="/messages"> <Tab label="Messages"/></Link>
 
             </Tabs>
         </Paper>
