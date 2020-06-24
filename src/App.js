@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
-import Grid from "@material-ui/core/Grid";
-import Form from "./components/Form";
+
 import CenteredTabs from "./components/CenteredTabs";
 import {createMuiTheme} from '@material-ui/core/styles';
 import {MuiThemeProvider} from "@material-ui/core";
