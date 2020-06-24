@@ -16,7 +16,6 @@ jobs:
           node-version: 14.x
       - name: run npm install and build
         run: |
-          cd frontendreact
           npm install
           npm run build
       - name: upload frontend build artifacts
